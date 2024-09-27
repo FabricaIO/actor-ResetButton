@@ -11,13 +11,13 @@
 #pragma once
 #include <Arduino.h>
 #include <WiFi.h>
-#include <SignalReceiver.h>
+#include <Actor.h>
 #include <EventBroadcaster.h>
 #include <ArduinoJson.h>
 #include <unordered_map>
 
 /// @brief Provides a button to factory reset device
-class ResetButton : public SignalReceiver {
+class ResetButton : public Actor {
 	private:
 		/// @brief Describes available pin states
 		std::unordered_map<std::string, int> modes = {{"Input", INPUT}, {"Input pull-up", INPUT_PULLUP}, {"Input pull-down", INPUT_PULLDOWN}};
@@ -61,7 +61,7 @@ class ResetButton : public SignalReceiver {
 	public:
 		ResetButton(int Pin);
 		bool begin();
-		std::tuple<bool, String> receiveSignal(int signal, String payload = "");
+		std::tuple<bool, String> receiveAction(int Action, String payload = "");
 		String getConfig();
 		bool setConfig(String config);
 };

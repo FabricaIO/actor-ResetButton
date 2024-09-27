@@ -10,10 +10,10 @@ ResetButton::ResetButton(int Pin) {
 /// @return True on success
 bool ResetButton::begin() {
 	// Set description
-	Description.signalQuantity = 1;
+	Description.actionQuantity = 1;
 	Description.type = "button";
 	Description.name = "Reset Button";
-	Description.signals = {{"Reset", 0}};
+	Description.actions = {{"Reset", 0}};
 	Description.id = 0;
 	bool result = false;
 	// Create settings directory if necessary
@@ -31,12 +31,12 @@ bool ResetButton::begin() {
 	}
 }
 
-/// @brief Receives a signal
-/// @param signal The signal to process (only option is 0 for reset)
+/// @brief Receives an action
+/// @param signal The action to process (only option is 0 for reset)
 /// @param payload Not used
 /// @return JSON response with OK
-std::tuple<bool, String> ResetButton::receiveSignal(int signal, String payload) {
-	if (signal == 0) {
+std::tuple<bool, String> ResetButton::receiveAction(int action, String payload) {
+	if (action == 0) {
 		reset();
 	}	
 	return { true, R"({"Response": "OK"})" };
