@@ -27,7 +27,7 @@ bool ResetButton::begin() {
 		return false;
 	} else {
 		// Load settings
-		return setConfig(Storage::readFile("/settings/sig/ResetButton.json"));
+		return setConfig(Storage::readFile("/settings/sig/ResetButton.json"), false);
 	}
 }
 
@@ -65,9 +65,10 @@ String ResetButton::getConfig() {
 }
 
 /// @brief Sets the configuration for this device
-/// @param config The JSON config to use
+/// @param config A JSON string of the configuration settings
+/// @param save If the configuration should be saved to a file
 /// @return True on success
-bool ResetButton::setConfig(String config) {
+bool ResetButton::setConfig(String config, bool save) {
 	// Stop reset checker
 	if(xCreated == pdPASS)
 	{
@@ -88,8 +89,10 @@ bool ResetButton::setConfig(String config) {
 	current_config.pin = doc["pin"].as<int>();
 	current_config.active = doc["active"]["current"].as<std::string>();
 	current_config.mode = doc["mode"]["current"].as<std::string>();
-	if (!saveConfig(config_path, getConfig())) {
-		return false;
+	if (save) {
+		if (!saveConfig(config_path, getConfig())) {
+			return false;
+		}
 	}
 	return configureButton();
 }

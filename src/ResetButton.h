@@ -18,7 +18,7 @@
 
 /// @brief Provides a button to factory reset device
 class ResetButton : public Actor {
-	private:
+	protected:
 		/// @brief Describes available pin states
 		std::unordered_map<std::string, int> modes = {{"Input", INPUT}, {"Input pull-up", INPUT_PULLUP}, {"Input pull-down", INPUT_PULLDOWN}};
 
@@ -63,5 +63,5 @@ class ResetButton : public Actor {
 		bool begin();
 		std::tuple<bool, String> receiveAction(int Action, String payload = "");
 		String getConfig();
-		bool setConfig(String config);
+		bool setConfig(String config, bool save);
 };
