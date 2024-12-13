@@ -138,7 +138,7 @@ void ResetButton::ResetChecker() {
 
 /// @brief Resets device settings
 void ResetButton::reset() {
-	Serial.println("Rest button pressed...");
+	Serial.println("Reset button pressed...");
 	EventBroadcaster::broadcastEvent(EventBroadcaster::Events::Rebooting);
 	// Reset WiFi settings
 	WiFi.mode(WIFI_AP_STA); // Cannot erase if not in STA mode!
