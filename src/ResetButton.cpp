@@ -14,7 +14,6 @@ bool ResetButton::begin() {
 	Description.type = "button";
 	Description.name = "Reset Button";
 	Description.actions = {{"Reset", 0}};
-	Description.id = 0;
 	bool result = false;
 	// Create settings directory if necessary
 	if (!checkConfig(config_path)) {
