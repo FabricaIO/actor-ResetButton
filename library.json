@@ -1,0 +1,44 @@
+{
+	"name": "Fabrica-IO Actor Reset Button",
+	"version": "0.5.0",
+	"description": "Uses a button or input to reset and wipe all settings on device",
+	"keywords": "Fabrica-IO, actor, button, input",
+	"repository":
+	{
+	  "type": "git",
+	  "url": "https://github.com/FabricaIO/actor-ResetButton.git"
+	},
+	"authors":
+	[
+	  {
+		"name": "Sam Groveman",
+		"email": "SamGroveman@outlook.com",
+		"url": "https://github.com/FabricaIO"
+	  }
+	],
+	"dependencies": {
+	  },
+	"license": "GPLv3",
+	"homepage": "https://github.com/FabricaIO",
+	"frameworks": "arduino",
+	"platforms": "*",
+	"fabrica-io" : {
+		"name": "reset",
+		"type": 1,
+		"category": "button",
+		"libname": "ResetButton",
+		"includes": ["ResetButton"],
+		"description": "Uses a button or input to reset and wipe all settings on device",
+		"constructor": 
+		[
+			[
+				{
+					"name": "Pin",
+					"type": "int",
+					"description": "The pin to use",
+					"default": ""
+				}
+			]
+		]
+	}
+  }
