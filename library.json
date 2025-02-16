@@ -1,5 +1,5 @@
 {
-	"name": "Fabrica-IO Actor Reset Button",
+	"name": "actor-ResetButton",
 	"version": "0.5.0",
 	"description": "Uses a button or input to reset and wipe all settings on device",
 	"keywords": "Fabrica-IO, actor, button, input",
