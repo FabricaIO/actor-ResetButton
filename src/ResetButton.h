@@ -59,7 +59,7 @@ class ResetButton : public Actor {
 		static void ResetCheckerTaskWrapper(void* arg);
 
 	public:
-		ResetButton(int Pin);
+		ResetButton(String Name, int Pin);
 		bool begin();
 		std::tuple<bool, String> receiveAction(int Action, String payload = "");
 		String getConfig();

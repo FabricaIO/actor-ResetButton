@@ -1,8 +1,9 @@
 #include "ResetButton.h"
 
 /// @brief Creates a reset button
+/// @param Name The device name 
 /// @param Pin the pin to use for the button
-ResetButton::ResetButton(int Pin) {
+ResetButton::ResetButton(String Name, int Pin) : Actor(Name) {
 	current_config.pin = Pin;
 }
 
@@ -12,7 +13,6 @@ bool ResetButton::begin() {
 	// Set description
 	Description.actionQuantity = 1;
 	Description.type = "button";
-	Description.name = "Reset Button";
 	Description.actions = {{"Reset", 0}};
 	bool result = false;
 	// Create settings directory if necessary
