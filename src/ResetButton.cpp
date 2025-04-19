@@ -38,7 +38,7 @@ std::tuple<bool, String> ResetButton::receiveAction(int action, String payload) 
 	if (action == 0) {
 		reset();
 	}	
-	return { true, R"({"Response": "OK"})" };
+	return { true, R"({"success": true})" };
 }
 
 /// @brief Gets the current config
