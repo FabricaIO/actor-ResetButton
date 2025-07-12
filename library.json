@@ -23,7 +23,7 @@
 	"frameworks": "arduino",
 	"platforms": "*",
 	"fabricaio" : {
-		"name": "reset",
+		"name": "Reset",
 		"type": 1,
 		"category": "button",
 		"libname": "ResetButton",
