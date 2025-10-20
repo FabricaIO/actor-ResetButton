@@ -1,6 +1,7 @@
 /*
 * This file and associated .cpp file are licensed under the GPLv3 License Copyright (c) 2024 Sam Groveman
 * 
+* External libraries needed:
 * ArduinoJSON: https://arduinojson.org/
 * 
 * This could be done as a periodic task but is implemented with its own task loop so it can run even if there are errors starting
