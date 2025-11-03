@@ -11,7 +11,6 @@ ResetButton::ResetButton(String Name, int Pin) : Actor(Name) {
 /// @return True on success
 bool ResetButton::begin() {
 	// Set description
-	Description.actionQuantity = 1;
 	Description.type = "button";
 	Description.actions = {{"Reset", 0}};
 	bool result = false;
