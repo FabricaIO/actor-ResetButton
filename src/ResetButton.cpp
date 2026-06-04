@@ -33,7 +33,7 @@ bool ResetButton::begin() {
 /// @param signal The action to process (only option is 0 for reset)
 /// @param payload Not used
 /// @return JSON response with OK
-std::tuple<bool, String> ResetButton::receiveAction(int action, String payload) {
+std::pair<bool, String> ResetButton::receiveAction(const int action, const String& payload) {
 	if (action == 0) {
 		reset();
 	}	
